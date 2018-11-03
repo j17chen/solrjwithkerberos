@@ -121,6 +121,8 @@ public class MyKrb5HttpClientConfigurer extends HttpClientConfigurer {
         this.baseConfig = javax.security.auth.login.Configuration.getConfiguration();
         logger.debug(this.baseConfig.getClass().getName());
       } catch (SecurityException e) {
+        logger.error(e.getMessage());
+        e.printStackTrace();
         this.baseConfig = null;
       }
     }
