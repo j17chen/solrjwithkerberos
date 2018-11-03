@@ -2,7 +2,6 @@ import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.impl.HttpClientUtil;
-import org.apache.solr.client.solrj.impl.Krb5HttpClientConfigurer;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.client.solrj.response.UpdateResponse;
 import org.apache.solr.common.SolrInputDocument;
@@ -17,7 +16,7 @@ public class Main {
         try {
 
             String zkHostString = "node1.openstacklocal.com:2181,node2.openstacklocal.com:2181,node3.openstacklocal.com:2181/solr";
-            HttpClientUtil.addConfigurer(new Krb5HttpClientConfigurer());
+            HttpClientUtil.addConfigurer(new MyKrb5HttpClientConfigurer());
             SolrClient solr = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
             String id = String.valueOf(System.currentTimeMillis());
             //test write data
