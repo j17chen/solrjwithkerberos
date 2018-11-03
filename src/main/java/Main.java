@@ -37,6 +37,7 @@ public class Main {
                 QueryResponse response = solr.query(COLLECTION_NAME,query);
                 System.out.println(response.toString());
             }
+            solr.close();
         }catch (Exception ex){
             ex.printStackTrace();
         }

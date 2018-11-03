@@ -1,0 +1,7 @@
+﻿Client {
+  com.ibm.security.auth.module.Krb5LoginModule required
+  credsType=both
+  useKeytab="test.keytab"
+  debug=true
+  principal="test@HWX.COM";
+};
