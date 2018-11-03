@@ -1,4 +1,4 @@
-﻿Client {
+Client {
   com.ibm.security.auth.module.Krb5LoginModule required
   credsType=both
   useKeytab="test.keytab"
